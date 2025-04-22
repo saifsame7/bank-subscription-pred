@@ -11,3 +11,4 @@ plotly-express==0.4.1
 scikit-learn==1.6.1
 seaborn==0.13.2
 streamlit==1.44.1
+python==3.10.15
