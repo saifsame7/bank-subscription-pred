@@ -1,0 +1,16 @@
+kaggle=1.7.4.2=pypi_0
+kagglehub=0.3.11=pypi_0
+matplotlib=3.9.3=pypi_0
+matplotlib-inline=0.1.6=py310haa95532_0
+numpy=1.26.4=pypi_0
+numpy-base=2.0.1=py310h65a83cf_1
+panda=0.3.1=pypi_0
+pandas=2.2.3=py310h5da7b33_0
+pillow=11.0.0=pypi_0
+pip=24.2=py310haa95532_0
+plotly=6.0.1=pypi_0
+plotly-express=0.4.1=pypi_0
+python=3.10.15=h4607a30_1
+scikit-learn=1.6.1=py310h585ebfc_0
+seaborn=0.13.2=pypi_0
+streamlit=1.44.1=pyhd8ed1ab_0
