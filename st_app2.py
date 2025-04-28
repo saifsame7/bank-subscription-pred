@@ -20,19 +20,19 @@ fig,axs= plt.subplots(2, 2, figsize=(15, 10))
 
 st.subheader("Age Distribution")
 sns.histplot(df_cleaned['age'], kde=True, ax=axs[0,0])
-st.pyplot(fig)
 
 st.subheader("education Distribution")
 df_cleaned['education'].value_counts().plot.pie(autopct='%1.1f%%', ax=axs[0,1])
-st.pyplot(fig)
+
 
 st.subheader("pick feature for platting histogram")
 feature = st.selectbox("feature", df_cleaned.columns)
-sns.histplot(df_cleaned[feature], kde=True, ax=axs[1,1])
-st.pyplot(fig)
+sns.histplot(df_cleaned[feature], kde=True, ax=axs[1,0])
 
-st.subheader("Correlation Heatmap")
-sns.heatmap(df_cleaned.corr(), annot=True, cmap='coolwarm', ax=axs[1,0])
+
+sns.boxplot(x='education', y='age', data=df_cleaned, ax=axs[1, 1])
+axs[1, 1].set_title('Age Distribution by Education')
+axs[1, 1].tick_params(axis='x', rotation=45)
 st.pyplot(fig)
 
 # Input widgets
