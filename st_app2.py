@@ -30,7 +30,7 @@ feature = st.selectbox("feature", df_cleaned.columns)
 sns.histplot(df_cleaned[feature], kde=True, ax=axs[1,0])
 
 
-plt.boxplot(x=df_cleaned['education'],  ax=axs[1, 1],labels=['Basic (4 years)','Basic (6 years)','Basic (9 years)','High School','Professional Course','University Degree','Illiterate'])
+sns.boxplot(x='education', y='age', data=df_cleaned, ax=axs[1, 1])
 axs[1, 1].set_title('Age Distribution by Education')
 axs[1, 1].tick_params(axis='x', rotation=45)
 st.pyplot(fig)
