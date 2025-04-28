@@ -16,6 +16,18 @@ preprocessor = joblib.load('preprocessor.pkl')
 st.title('bank loan subscription Predictor')
 
 # visualization
+education_mapping = {
+    'basic.4y': 'Basic (4 years)',
+    'basic.6y': 'Basic (6 years)',
+    'basic.9y': 'Basic (9 years)',
+    'high.school': 'High School',
+    'professional.course': 'Professional Course',
+    'university.degree': 'University Degree',
+    'illiterate': 'Illiterate'
+}
+
+df_cleaned['education_decoded'] = df_cleaned['education'].map(education_mapping)
+
 fig,axs= plt.subplots(2, 2, figsize=(15, 10))
 
 st.subheader("Age Distribution")
@@ -30,7 +42,7 @@ feature = st.selectbox("feature", df_cleaned.columns)
 sns.histplot(df_cleaned[feature], kde=True, ax=axs[1,0])
 
 
-sns.boxplot(x='education', y='age', data=df_cleaned, ax=axs[1, 1])
+sns.boxplot(x='education_decoded', y='age', data=df_cleaned, ax=axs[1, 1])
 axs[1, 1].set_title('Age Distribution by Education')
 axs[1, 1].tick_params(axis='x', rotation=45)
 st.pyplot(fig)
