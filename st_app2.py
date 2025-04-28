@@ -12,6 +12,28 @@ preprocessor = joblib.load('preprocessor.pkl')
 # App interface
 st.title('bank loan subscription Predictor')
 
+# visualization
+st.subheader("Age Distribution")
+fig, ax = plt.subplots()
+sns.histplot(df_cleaned['age'], kde=True, ax=ax)
+st.pyplot(fig)
+
+st.subheader("Gender Distribution")
+fig, ax = plt.subplots()
+df['gender'].value_counts().plot.pie(autopct='%1.1f%%', ax=ax)
+st.pyplot(fig)
+
+st.subheader("Select feature to plot histogram")
+feature = st.selectbox("Feature", df.columns)
+fig, ax = plt.subplots()
+sns.histplot(df[feature], kde=True, ax=ax)
+st.pyplot(fig)
+
+st.subheader("Correlation Heatmap")
+fig, ax = plt.subplots()
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm', ax=ax)
+st.pyplot(fig)
+
 # Input widgets
 col1, col2 = st.columns(2)
 with col1:
@@ -25,7 +47,7 @@ with col1:
   cons_conf_idx = st.number_input("Consumer Confidence Index", value=-40.0)
   euribor3m = st.number_input("Euribor 3 Month Rate", value=4.86)
   nr_employed = st.number_input("Number of Employees", value=5191.0)
-    
+
 with col2:
   job = st.selectbox("Job", ['admin.', 'blue-collar', 'entrepreneur', 'housemaid', 'management',
                            'retired', 'self-employed', 'services', 'student', 'technician', 'unemployed', 'unknown'])
