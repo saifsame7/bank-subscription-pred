@@ -22,7 +22,7 @@ st.subheader("Age Distribution")
 sns.histplot(df_cleaned['age'], kde=True, ax=axs[0,0])
 
 st.subheader("education Distribution")
-df_cleaned['education'].value_counts().plot.pie(autopct='%1.1f%%', ax=axs[0,1])
+df_cleaned['education'].value_counts().plot.pie(autopct='%1.1f%%', ax=axs[0,1],labels=['Basic (4 years)','Basic (6 years)','Basic (9 years)','High School','Professional Course','University Degree','Illiterate'])
 
 
 st.subheader("pick feature for platting histogram")
