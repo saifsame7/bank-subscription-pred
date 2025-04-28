@@ -2,7 +2,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
-
+import matplotlib.pyplot as plt
 categorical_features = ['job', 'marital', 'education', 'default', 'housing', 'loan',
                         'contact', 'month', 'day_of_week', 'poutcome']
 # Load artifacts
