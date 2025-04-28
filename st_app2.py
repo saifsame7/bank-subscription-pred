@@ -17,13 +17,13 @@ st.title('bank loan subscription Predictor')
 
 # visualization
 education_mapping = {
-    '0': 'Basic (4 years)',
-    '1': 'Basic (6 years)',
-    '2': 'Basic (9 years)',
-    '3': 'High School',
-    '4': 'Professional Course',
-    '5': 'University Degree',
-    '6': 'Illiterate'
+    0: 'Basic (4 years)',
+    1: 'Basic (6 years)',
+    2: 'Basic (9 years)',
+    3: 'High School',
+    4: 'Professional Course',
+    5: 'University Degree',
+    6: 'Illiterate'
 }
 
 df_cleaned['education_decoded'] = df_cleaned['education'].map(education_mapping)
