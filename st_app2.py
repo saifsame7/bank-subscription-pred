@@ -4,6 +4,8 @@ import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+df_cleaned= pd.read_csv('cleaned_sampled_data.csv')
 categorical_features = ['job', 'marital', 'education', 'default', 'housing', 'loan',
                         'contact', 'month', 'day_of_week', 'poutcome']
 # Load artifacts
