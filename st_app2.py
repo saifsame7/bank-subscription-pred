@@ -32,7 +32,7 @@ sns.histplot(df_cleaned[feature], kde=True, ax=axs[1,0])
 
 sns.boxplot(x='education', y='age', data=df_cleaned, ax=axs[1, 1])
 axs[1, 1].set_title('Age Distribution by Education')
-axs[1, 1].tick_params(axis=['Basic (4 years)','Basic (6 years)','Basic (9 years)','High School','Professional Course','University Degree','Illiterate'], rotation=45)
+axs[1, 1].tick_params(axis=['x'], rotation=45)
 st.pyplot(fig)
 
 # Input widgets
