@@ -17,23 +17,23 @@ st.title('bank loan subscription Predictor')
 
 # visualization
 st.subheader("Age Distribution")
-fig, ax = plt.subplots(2,2)
+fig, ax = plt.subplots()
 sns.histplot(df_cleaned['age'], kde=True, ax=ax)
 st.pyplot(fig)
 
 st.subheader("education Distribution")
-fig, ax = plt.subplots(2,2)
+fig, ax = plt.subplots()
 df_cleaned['education'].value_counts().plot.pie(autopct='%1.1f%%', ax=ax)
 st.pyplot(fig)
 
 st.subheader("laon histogram")
 feature = st.selectbox("laon", df_cleaned.columns)
-fig, ax = plt.subplots(2,2)
+fig, ax = plt.subplots()
 sns.histplot(df_cleaned[feature], kde=True, ax=ax)
 st.pyplot(fig)
 
 st.subheader("Correlation Heatmap")
-fig, ax = plt.subplots(2,2)
+fig, ax = plt.subplots()
 sns.heatmap(df_cleaned.corr(), annot=True, cmap='coolwarm', ax=ax)
 st.pyplot(fig)
 
